@@ -6,7 +6,7 @@ struct SwiftPlayground {
     static func main() {
     
 var isrunning = true
-
+var count = Int()
 print("Welcome to Cinema Tickets.")
 while isrunning {
 
@@ -17,37 +17,30 @@ print("a for adult:  $12")
 print("s for senior: $10")
 print("q for quit")
 print("please enter a choice:")
-let userInput = readLine()! .lowercased()
-var count = Int()
+
+let userInput = readLine()!.lowercased()
+
+
 switch userInput {
 
-case "c": count = count + 8 
+case "c": 
+count = count + 8 
 print("Child added, your total cost is now $\(count)")
 
-case "a": count = count + 12
+case "a": 
+count = count + 12
 print("Adult added, your total cost is now $\(count)")
 
-case "s": count = count + 10
+case "s": 
+count = count + 10
 print("Adult added, your total cost is now $\(count)")
 
-case "q": isrunning = false 
+case "q":  
+isrunning = false 
 
 default: print("Invalid input, please try again")
-}
-print("Your total is $\(count)")
+}}
+print("your final total is $\(count)")
 print("Have a good day")
-
-
-
-
-}
-    
-    
-    
-
-
-
-
-
 
 }}
