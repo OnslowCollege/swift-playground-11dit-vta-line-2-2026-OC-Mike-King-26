@@ -54,7 +54,7 @@ print("\(invitee)")}
 isrunning = false
 
 
-default: print("Invalid input, please enter a valit input next time.")
+default: print("Invalid input, please enter a valid input next time.")
 print("")
 }
 
