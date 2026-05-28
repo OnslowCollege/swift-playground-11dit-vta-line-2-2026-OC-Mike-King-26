@@ -60,7 +60,7 @@ print("")
 
 }
 print("")
-print("Party well!")
+print("Party hard!")
 
 
 
