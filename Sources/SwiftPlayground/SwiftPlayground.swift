@@ -1,5 +1,9 @@
+
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
+
+
+
 
 @main
 struct SwiftPlayground {
@@ -26,7 +30,7 @@ else {print("Please enter a number")}
 
 
 if let input = readLine(), let age = Int(input) {
-    if age <= 18 {
+if age <= 18 {
         print("Too young.")
     } else {
         print("You may enter")
