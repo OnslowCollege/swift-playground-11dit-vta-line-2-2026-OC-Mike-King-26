@@ -5,13 +5,28 @@
 struct SwiftPlayground {
     static func main() {
 
-
+//asks user's age and creates variable for the while loop
 print("What is your age?")
+var next = false
+
+//checks if input is a number and if between 0 and 123
+//if not number, says "please enter a number"
+//if not between 0 and 123, says "Age Incorrect"
+
+
+while next {
 
 if let input = readLine(), let age = Int(input) {
-    if age <= 0 || age >= 122 {
-        print("Age incorrect.")
-    } else if age <= 18 {
+    if age <= 0 || age >= 123 {
+        print("Age Incorrect")}
+    
+    else {next = true}}
+else {print("Please enter a number")}
+}
+
+
+if let input = readLine(), let age = Int(input) {
+    if age <= 18 {
         print("Too young.")
     } else {
         print("You may enter")
