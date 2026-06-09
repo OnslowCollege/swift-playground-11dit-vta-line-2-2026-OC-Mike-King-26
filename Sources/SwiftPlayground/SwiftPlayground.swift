@@ -5,7 +5,7 @@
 struct SwiftPlayground {
     static func main() {
 
-//Most constants and variables which will be used within the code
+//Most constants and variables which will be used within the code are here
 
 ///boolean variable for controlling the while loop
 var isRunning: Bool = true
@@ -13,26 +13,33 @@ var isRunning: Bool = true
 ///constant for all the different bird species available
 let birdSpecies: [String] = [ "Tieke","Kākā", "Takahē", "Hihi", "Kiwi", "Pāteke", "Tūī", "Kererū"]
 
+
+//makes function for printing birdSpecies list with numbers as options
+func printBirdOptions() {
+for (index, bird) in birdSpecies.enumerated() {
+    print("\(index + 1). \(bird)")
+}}
+
+
+
 ///constant for all the different insect species available
 let insectSpecies: [String] = [ "Giant Wētā", "Tree Wētā", "Cave Wētā", "Putoko", "Pūngāwerewere", "Ngaokeoke", "Waemano", "Kapowai"]
 
 
-
-
-//makes bird species list with numbers
-var numberedBirdSpecies: [String] = []
-for (index, bird) in birdSpecies.enumerated() {
-    numberedBirdSpecies.append("\(index + 1). \(bird)")
-}
-
-//makes bird species list with numbers
-var numberedInsectSpecies: [String] = []
+//makes function for printing insectSpecies list with numbers as options
+func printInsectOptions() {
 for (index, insect) in insectSpecies.enumerated() {
-    numberedInsectSpecies.append("\(index + 1). \(insect)")
+    print("\(index + 1). \(insect)")
+
 }
-//testing purposes (still need for loops for all the lists)
-print("\(birdSpecies), \(insectSpecies), \(numberedBirdSpecies), \(numberedInsectSpecies)")
+
+//testing purposes
+printBirdOptions()
+printInsectOptions()
+
+
 //note to self: remove numbered lists and make them functions instead
+
 
 //welcomes the user to the program
 
@@ -44,8 +51,6 @@ print("\(birdSpecies), \(insectSpecies), \(numberedBirdSpecies), \(numberedInsec
 
 
 //prints what species the user saw and ends the program
-
-
 
 
 
