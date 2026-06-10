@@ -33,6 +33,9 @@ func printInsectOptions() {
 }
 
 
+//variable which is the array of species which user has spotted
+var totalSpotted: [String] = []
+
 
 
 //welcomes the user to the program
