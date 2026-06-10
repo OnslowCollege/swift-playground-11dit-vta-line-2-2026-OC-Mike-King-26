@@ -37,7 +37,6 @@ func printInsectOptions() {
 var totalSpotted: [String] = []
 
 
-
 //welcomes the user to the program
 print("Welcome to Zealandia Tracker.")
 print("")
@@ -45,14 +44,28 @@ print("")
 
 //asks if they saw a bird or insect if they saw anything
 //then puts the input into a constant
-print("Did you see a bird, insect:")
+print("Did you see a bird or an insect:")
 while isRunning1 {
-let userInput = readLine()?.lowercased()
+let inputBirdOrInsect = readLine()?.lowercased()
 
-if userInput == "bird" {}
 
+//checks if response is bird
+if inputBirdOrInsect == "bird" {
+    print("")
+    print("Which bird did you see?")
+let birdSeen = readLine()?.lowercased()
 }
 
+else {
+    if inputBirdOrInsect == "bird" {
+        print("")
+        print("Which insect did you see?")
+    }
+}
+
+
+
+}
 
 
 
