@@ -13,8 +13,8 @@ print("Let's start by recording your sleep")
 var whichDay = 0
 var hoursOfSleepEachDay: [Double] = [0, 0, 0, 0, 0, 0, 0]
 let daysOfWeek: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-let totalHours = hoursOfSleepEachDay.reduce(0, +)
-let averageSleep = totalHours / 7
+
+
 var isRunning = true
 
 
@@ -53,14 +53,18 @@ while isRunning {
     }
 
 
+let totalHours = hoursOfSleepEachDay.reduce(0, +)
+let averageSleep = Int(totalHours / 7)
+
+
 var sleepRating = ""
 if averageSleep < 0 {
     sleepRating = "Error"
 }
-else if averageSleep < 6.0 {
+else if averageSleep < 6 {
     sleepRating = "Poor"
 }
-else if averageSleep < 8.0 {
+else if averageSleep < 8 {
     sleepRating = "Ok"
 }
 else {
@@ -68,15 +72,17 @@ else {
 }
 
 
+var dayCount = 0
+
 for dayOfWeek in daysOfWeek {
-    for hoursOfSleep in hoursOfSleepEachDay {
-        print("Your sleep on \(dayOfWeek) was: \(hoursOfSleep) hours.")
-    }
+    print("Your sleep on \(dayOfWeek) was: \(hoursOfSleepEachDay[dayCount]) hours.")
+    dayCount = dayCount + 1
 }
 
 
+print("")
 print("You got a total of \(totalHours) hours of sleep,")
-print("which averages to \(averageSleep) per day")
+print("which averages to around \(averageSleep) hours per day")
 print("")
 print("Your sleep rating is: \(sleepRating)")
 
