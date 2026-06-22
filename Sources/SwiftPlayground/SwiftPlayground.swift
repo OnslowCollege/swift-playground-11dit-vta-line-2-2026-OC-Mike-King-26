@@ -42,7 +42,7 @@ while isRunning1 {
 }
 
 
-let daysOfWeek: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+let dayOfWeek: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 var whichDay = 0
 
 let socialMedias: [String] = ["Facebook", "Snapchat", "Instagram", "Discord", "other"]
@@ -53,24 +53,37 @@ var isRunning2 = true
 var isRunning3 = true
 
 while isRunning2 {
-    
-    print("On \(daysOfWeek[whichDay]), how many hours did you spend on:")
-    var hoursOnSocialMedias: [Double] = [0]
+
+    print("On \(dayOfWeek[whichDay]), how many hours did you spend on:")
+    var hoursOnSocialMedias: [Int] = [0, 0, 0, 0, 0,]
+    let totalHoursOnSocialMedias = hoursOnSocialMedias.reduce(0, +)
 
     while isRunning3 {
         print("\(socialMedias[whichSocialMedia]):")
         let userInput = readLine() ?? ""
-        let hoursSpent = Double(userInput) ?? -1
+        let hoursSpent = Int(userInput) ?? -1
 
         if hoursSpent < 0 {
             print("Time spent needs to be a positive number.")
             print("Please Try again.")
         }        
-        else if (hoursSpent + hoursOnSocialMedias) > 24 {
+        else if hoursSpent > 24 {
             print("\(hoursSpent) is more than how many there are in a day.")
             print("Please try again.")
         }
-        else if hoursSpent = {}
+        else if hoursSpent + totalHoursOnSocialMedias > 24 {
+            print("Your total hours on \(dayOfWeek[whichDay]) exceeds 24 hours so you will need to redo the day.")
+            //do something here
+        }
+        else {
+            hoursOnSocialMedias.insert(hoursSpent, at: whichSocialMedia)
+            whichSocialMedia = whichSocialMedia + 1
+        }
+        if whichSocialMedia == 5 {
+            print("Overall on \(whichDay) you spent \(totalHoursOnSocialMedias) doomscrolling.")
+            whichDay = whichDay + 1
+            hoursDoomscrolling.insert(totalHoursOnSocialMedias, at: whichDay)
+        }
     }
 
 
