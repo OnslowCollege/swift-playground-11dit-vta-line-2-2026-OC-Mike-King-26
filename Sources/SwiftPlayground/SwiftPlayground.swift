@@ -12,31 +12,34 @@ print("Enter a number:")
 
 
 var isRunning1 = true
-let userInput = readLine() ?? ""
-
+var hourLimit = 0
 
 while isRunning1 {
-let hourLimit = Int(userInput) ?? -1
 
-    if hourLimit < 0 {
+    let userInput = readLine() ?? ""
+    let hourLimitRequest = Int(userInput) ?? -1
+
+
+    if hourLimitRequest < 0 {
         print("Please make sure to enter a positive whole number")
         print("Please try again.")
     }
-    else if hourLimit < 1 {
+    else if hourLimitRequest < 1 {
         print("The minimum time allowance is 1 hour.")
         print("Please try again.")
     }
-    else if hourLimit > 24 {
-        print("\(hourLimit) hours is more than how many there are hours in a day.")
+    else if hourLimitRequest > 24 {
+        print("\(hourLimitRequest) hours is more than how many there are hours in a day.")
         print("And maximum time allowance is 5 hours.")
         print("Please try again.")
     }
-    else if hourLimit > 5 {
+    else if hourLimitRequest > 5 {
         print("The maximum time allowance is 5 hours.")
         print("Please try again.")
     }
     else {
-        print("\(hourLimit) has been set as the time allowance.")
+        hourLimit = (hourLimitRequest)
+        print("\(hourLimitRequest) has been set as the time allowance.")
         print("")
         isRunning1 = false
     }
@@ -69,8 +72,8 @@ while isRunning2 {
     while isRunning1 {
         let totalHoursOnSocialMedias = hoursOnSocialMedias.reduce(0, +)
         print("\(socialMedias[whichSocialMedia]):")
-        let userInput2 = readLine() ?? ""
-        let hoursSpent = Int(userInput2) ?? -1
+        let userInput = readLine() ?? ""
+        let hoursSpent = Int(userInput) ?? -1
 
         if hoursSpent < 0 {
             print("Time spent needs to be a positive number.")
