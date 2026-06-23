@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-@main
+@main 
 struct SwiftPlayground {
     static func main() {
 
@@ -10,12 +10,13 @@ print("")
 print("What is the hour limit set for each day?")
 print("Enter a number:")
 
-let userInput = readLine() ?? ""
-let hourLimit = Double(userInput) ?? -1
+
 var isRunning1 = true
+let userInput = readLine() ?? ""
 
 
 while isRunning1 {
+let hourLimit = Int(userInput) ?? -1
 
     if hourLimit < 0 {
         print("Please make sure to enter a positive whole number")
@@ -26,7 +27,7 @@ while isRunning1 {
         print("Please try again.")
     }
     else if hourLimit > 24 {
-        print("\(hourLimit) hours is more than how many there are in a day.")
+        print("\(hourLimit) hours is more than how many there are hours in a day.")
         print("And maximum time allowance is 5 hours.")
         print("Please try again.")
     }
@@ -46,49 +47,80 @@ let dayOfWeek: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday
 var whichDay = 0
 
 let socialMedias: [String] = ["Facebook", "Snapchat", "Instagram", "Discord", "other"]
-var whichSocialMedia = 0
 
-var hoursDoomscrolling: [Int] = [0, 0, 0, 0, 0, 0, 0]
+
+var hoursDoomscrolling = 0
 var isRunning2 = true
-var isRunning3 = true
+var hoursOnSocialMedias: [Int] = [0, 0, 0, 0, 0]
+
+
 
 while isRunning2 {
+    var whichSocialMedia = 0
+    if whichDay == 7 {
+        isRunning2 = false
+    }
+    else {  
+        print("")
+        print("On \(dayOfWeek[whichDay]), how many hours did you spend on:")
+        isRunning1 = true
+    }
 
-    print("On \(dayOfWeek[whichDay]), how many hours did you spend on:")
-    var hoursOnSocialMedias: [Int] = [0, 0, 0, 0, 0,]
-    let totalHoursOnSocialMedias = hoursOnSocialMedias.reduce(0, +)
-
-    while isRunning3 {
+    while isRunning1 {
+        let totalHoursOnSocialMedias = hoursOnSocialMedias.reduce(0, +)
         print("\(socialMedias[whichSocialMedia]):")
-        let userInput = readLine() ?? ""
-        let hoursSpent = Int(userInput) ?? -1
+        let userInput2 = readLine() ?? ""
+        let hoursSpent = Int(userInput2) ?? -1
 
         if hoursSpent < 0 {
             print("Time spent needs to be a positive number.")
             print("Please Try again.")
         }        
         else if hoursSpent > 24 {
-            print("\(hoursSpent) is more than how many there are in a day.")
+            print("\(hoursSpent) is more than how many there are hours in a day.")
             print("Please try again.")
         }
         else if hoursSpent + totalHoursOnSocialMedias > 24 {
-            print("Your total hours on \(dayOfWeek[whichDay]) exceeds 24 hours so you will need to redo the day.")
-            //do something here
+            print("Your total hours on \(dayOfWeek[whichDay]) exceeds 24 hours.")
+            print("You will need to redo this day.")
+            print("")
+            isRunning1 = false
         }
         else {
-            hoursOnSocialMedias.insert(hoursSpent, at: whichSocialMedia)
+            hoursOnSocialMedias[whichSocialMedia] = hoursSpent
             whichSocialMedia = whichSocialMedia + 1
         }
         if whichSocialMedia == 5 {
-            print("Overall on \(whichDay) you spent \(totalHoursOnSocialMedias) doomscrolling.")
+            print("Overall on \(dayOfWeek[whichDay]) you spent \(totalHoursOnSocialMedias) hours doomscrolling.")
             whichDay = whichDay + 1
-            hoursDoomscrolling.insert(totalHoursOnSocialMedias, at: whichDay)
+            hoursDoomscrolling = hoursDoomscrolling + totalHoursOnSocialMedias
+            isRunning1 = false
         }
     }
-
-
-
 }
+
+    let averageHoursScrolling = hoursDoomscrolling / 7
+    var limitDecision = ""
+
+if averageHoursScrolling > hourLimit {
+    limitDecision = "OVER"
+}
+else if averageHoursScrolling == hourLimit {
+    limitDecision = "EXACTLY"
+}
+else if averageHoursScrolling < hourLimit {
+    limitDecision = "UNDER"
+}
+
+print("")
+print("SUMMARY")
+print("=-----=")
+print(" - This week you spent \(hoursDoomscrolling) hours doomscrolling")
+print(" - Average of \(averageHoursScrolling) hours per day") 
+print("Overall, your usage is \(limitDecision) the limit!")
+
+
+
 
 
     }
