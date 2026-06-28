@@ -102,6 +102,7 @@ while isRunning2 {
     /*Asks user how much scrolling they did on a certian day and starts the
     data collection loop after resetting the hoursOnSocialMedias to the original state. This happens if all data hasn't been collected.*/
     else {  
+        hoursOnSocialMedias = [0, 0, 0, 0, 0]
         print("")
         print("On \(dayOfWeek[whichDay]), how many hours did you spend on:")
         isRunning1 = true
