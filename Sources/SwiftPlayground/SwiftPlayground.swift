@@ -100,8 +100,7 @@ while isRunning2 {
     }
 
     /*Asks user how much scrolling they did on a certian day and starts the
-    data collection loop. This is all if all data hasn't been collected.
-    */
+    data collection loop after resetting the hoursOnSocialMedias to the original state. This happens if all data hasn't been collected.*/
     else {  
         print("")
         print("On \(dayOfWeek[whichDay]), how many hours did you spend on:")
@@ -153,7 +152,7 @@ while isRunning2 {
         }
 
         //checks if all data has been collected for the day
-        //if it has, provides brief summary and ends the loop making it the next day
+        //if it has, provides brief summary and ends the loop making it the next day.
         if whichSocialMedia == 5 {
             print("Overall on \(dayOfWeek[whichDay]) you spent \(totalHoursOnSocialMedias) hours doomscrolling.")
             whichDay = whichDay + 1
