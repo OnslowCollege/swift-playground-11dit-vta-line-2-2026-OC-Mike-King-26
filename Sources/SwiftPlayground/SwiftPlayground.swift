@@ -163,9 +163,17 @@ while isRunning2 {
     }
 }
 
-    let averageHoursScrolling = hoursDoomscrolling / 7
-    var limitDecision = ""
 
+///Constant is the average time spent per day on cellphone.
+let averageHoursScrolling = hoursDoomscrolling / 7
+
+
+///Variable is used to decide if the user met the hourlimit or not.
+var limitDecision = ""
+
+
+// Decides if the user was over, exactly, or under the limit.
+// This is done by checking if the average hours was greater, equal to, or under hourlimit variable.
 if averageHoursScrolling > hourLimit {
     limitDecision = "OVER"
 }
@@ -176,6 +184,9 @@ else if averageHoursScrolling < hourLimit {
     limitDecision = "UNDER"
 }
 
+
+/*Provides a summary of how much time they spent scrolling in total, 
+on average, and if the average was above or below the set hour limit per day.*/
 print("")
 print("SUMMARY")
 print("=-----=")
