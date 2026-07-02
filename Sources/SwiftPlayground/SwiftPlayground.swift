@@ -163,7 +163,9 @@ while isRunning2 {
     }
 }
 
+///Is pretty much variable hoursDoomscrolling but is now a Double for averageHoursScrolling to use
 let hoursDoomscrollingDouble = Double(hoursDoomscrolling)
+
 ///Constant is the average time spent per day on cellphone.
 let averageHoursScrolling: Double = hoursDoomscrollingDouble / 7.0
 
