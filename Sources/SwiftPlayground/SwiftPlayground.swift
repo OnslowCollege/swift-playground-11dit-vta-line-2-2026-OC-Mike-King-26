@@ -16,7 +16,7 @@ print("Enter a number:")
 var isRunning1 = true
 
 ///Sets the limit which used in the summary to check if the user doomscrolled too much or was all good
-var hourLimit = 0
+var hourLimit: Double = 0.0
 
 
 while isRunning1 {
@@ -29,7 +29,7 @@ while isRunning1 {
 
     //Checks if input is a negative number, if not, restarts again.
     if hourLimitRequest < 0 {
-        print("Please make sure to enter purely a positive whole number")
+        print("Please make sure to enter a non negative whole number")
         print("Please try again.")
     }
 
@@ -54,7 +54,7 @@ while isRunning1 {
 
     //Sets the input as time limit and finishes the loop.
     else {
-        hourLimit = (hourLimitRequest)
+        hourLimit = Double(hourLimitRequest)
         print("\(hourLimitRequest) has been set as the time allowance.")
         print("")
         isRunning1 = false
@@ -124,7 +124,7 @@ while isRunning2 {
 
         //Checks if input is a negative number, if not, restarts again.
         if hoursSpent < 0 {
-            print("Time spent needs to purely be a positive whole number.")
+            print("Time spent needs to be a non negative whole number.")
             print("Please Try again.")
         }   
 
@@ -163,10 +163,9 @@ while isRunning2 {
     }
 }
 
-
+let hoursDoomscrollingDouble = Double(hoursDoomscrolling)
 ///Constant is the average time spent per day on cellphone.
-let averageHoursScrolling = hoursDoomscrolling / 7
-
+let averageHoursScrolling: Double = hoursDoomscrollingDouble / 7.0
 
 ///Variable is used to decide if the user met the hourlimit or not.
 var limitDecision = ""
