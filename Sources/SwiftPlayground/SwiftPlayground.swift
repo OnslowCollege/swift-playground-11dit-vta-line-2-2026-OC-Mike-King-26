@@ -209,7 +209,7 @@ struct SwiftPlayground {
     if expenseNames.count > 0 {
         areThereExpenses = true
     }
-    
+
     var totalMoneyAfterExpenses = totalMoneyAfterTax
 
     if areThereExpenses == true {
