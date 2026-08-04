@@ -209,9 +209,7 @@ struct SwiftPlayground {
     if expenseNames.count > 0 {
         areThereExpenses = true
     }
-    print(expenseNames)
-    print(expenseNames.count)
-    print(areThereExpenses)
+    
     var totalMoneyAfterExpenses = totalMoneyAfterTax
 
     if areThereExpenses == true {
