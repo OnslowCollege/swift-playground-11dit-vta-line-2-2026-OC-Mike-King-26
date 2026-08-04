@@ -122,7 +122,7 @@ struct SwiftPlayground {
 
         // Asks user if they have any expenses.
         print("Do you have any expenses?")
-        print("(Y/N)")
+        print("(Y/N):")
 
         // Turns the userinput into a constant and provides a fallback when unwrapping.
         // This is done when the user inputs something which would usually crash the program.
@@ -236,15 +236,15 @@ struct SwiftPlayground {
 
     }
 
-    ///
+    /// Simply tells the program if there are expenses or not.
     var areThereExpenses = false
 
+    // Checks if there are expenses.
     if expenseNames.count > 0 {
         areThereExpenses = true
     }
-    print(expenseNames)
-    print(expenseNames.count)
-    print(areThereExpenses)
+
+    /// Starts with the same value as money after tax.
     var totalMoneyAfterExpenses = totalMoneyAfterTax
 
 
@@ -299,7 +299,7 @@ struct SwiftPlayground {
 
     // If the user is in debt, tells the user to reduce their expenses.
     if isInDebt {
-        print("You are in debt this week. please reduce your expenses.")
+        print("You are in debt this week, please reduce your expenses.")
     }
 
     // Otherwise states that the user can afford their expenses.
